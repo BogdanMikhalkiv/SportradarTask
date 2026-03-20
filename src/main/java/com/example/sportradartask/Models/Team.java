@@ -1,11 +1,11 @@
 package com.example.sportradartask.Models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,8 +13,16 @@ import lombok.Data;
 public class Team {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long teamId;
 
     private String teamName;
+
+    @OneToMany(mappedBy = "eventHomeTeam",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Event> homeEvents;
+
+    @OneToMany(mappedBy = "eventAwayTeam",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Event> awayEvents;
 }

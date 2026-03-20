@@ -13,14 +13,14 @@ import java.util.Set;
 public class Result {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long resultId;
 
     private Integer resultHomeGoals;
     private Integer resultAwayGoals;
     private String resultWinner;
 
-    @OneToMany(mappedBy = "result",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "eventResult",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Event> events;
 }

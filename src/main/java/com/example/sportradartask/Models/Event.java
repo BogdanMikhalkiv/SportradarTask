@@ -13,7 +13,7 @@ import java.time.LocalTime;
 public class Event {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eventId;
 
     private String eventStatus;
@@ -31,4 +31,8 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "resultId_foreignkey", nullable = false)
     private Result eventResult;
+
+    @ManyToOne
+    @JoinColumn(name = "sportId_foreignkey", nullable = false)
+    private Sport eventSport;
 }
