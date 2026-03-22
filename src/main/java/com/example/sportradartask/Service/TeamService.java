@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface TeamService {
 
-    List<Team> getUserList();
-    Team saveUser(Team team);
+    List<Team> getTeamList();
+    Team saveTeam(Team team);
 }
