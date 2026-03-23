@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EventDTO {
+public class EventRequestDTO {
     private String eventStatus;
     private LocalTime eventTimeVenueUTC;
     private LocalDate eventDateVenue;

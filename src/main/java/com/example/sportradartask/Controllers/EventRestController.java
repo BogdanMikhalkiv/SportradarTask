@@ -1,5 +1,6 @@
 package com.example.sportradartask.Controllers;
 
+import com.example.sportradartask.Models.DTO.EventRequestDTO;
 import com.example.sportradartask.Models.Event;
 import com.example.sportradartask.Service.EventService;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,7 @@ public class EventRestController {
     private final EventService eventService;
 
     @PostMapping("add_event")
-    public Event saveEvent(@RequestBody Event event) {
+    public Event saveEvent(@RequestBody EventRequestDTO event) {
         return eventService.saveEvent(event);
     }
 
