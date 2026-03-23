@@ -23,7 +23,10 @@ public class EventViewController {
     public String getEvents(Model model) {
         List<EventShowDTO> eventShowDTOS = eventService.getEventList();
 
-        model.addAttribute("primeList", eventShowDTOS);
+
+        model.addAttribute("events", eventShowDTOS);
+
+
 
         return "index";
     }

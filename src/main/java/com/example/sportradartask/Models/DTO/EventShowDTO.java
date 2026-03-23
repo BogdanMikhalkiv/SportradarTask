@@ -16,14 +16,13 @@ import java.util.List;
 public class EventShowDTO {
     private Long eventId;
     private String eventStatus;
-    private LocalTime eventTimeVenueUTC;
+    private DayOfWeek eventDayOfTheWeek;
     private LocalDate eventDateVenue;
-    private DayOfWeek dayOfTheWeek;
-
+    private LocalTime eventTimeVenueUTC;
+    private String sportName;
     private String homeTeamName;
     private String awayTeamName;
     private String result;
-    private String sportName;
 
 
     public static List<EventShowDTO> toDTOList(List<Event> eventList){
@@ -31,13 +30,13 @@ public class EventShowDTO {
                 .map(event -> new EventShowDTO(
                         event.getEventId(),
                         event.getEventStatus(),
-                        event.getEventTimeVenueUTC(),
-                        event.getEventDateVenue(),
                         event.getEventDateVenue().getDayOfWeek(),
+                        event.getEventDateVenue(),
+                        event.getEventTimeVenueUTC(),
+                        event.getEventSport().getSportName(),
                         event.getEventHomeTeam().getTeamName(),
                         event.getEventAwayTeam().getTeamName(),
-                        event.getEventResult().getResultWinner(),
-                        event.getEventSport().getSportName()
+                        event.getEventResult().getResultWinner()
 
                 ))
                 .toList();
