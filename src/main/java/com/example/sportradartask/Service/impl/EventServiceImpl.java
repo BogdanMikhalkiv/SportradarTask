@@ -1,6 +1,7 @@
 package com.example.sportradartask.Service.impl;
 
 import com.example.sportradartask.Models.DTO.EventRequestDTO;
+import com.example.sportradartask.Models.DTO.EventShowDTO;
 import com.example.sportradartask.Models.Event;
 import com.example.sportradartask.Models.Result;
 import com.example.sportradartask.Models.Sport;
@@ -27,8 +28,8 @@ public class EventServiceImpl implements EventService {
     private ResultRepository resultRepository;
     private SportRepository sportRepository;
     @Override
-    public List<Event> getEventList() {
-        return eventRepository.findAll();
+    public List<EventShowDTO> getEventList() {
+        return EventShowDTO.toDTOList(eventRepository.findAll());
     }
 
     @Override
@@ -40,12 +41,14 @@ public class EventServiceImpl implements EventService {
         Optional<Result> result = resultRepository.findById(event.getResultId());
         Optional<Sport> sport = sportRepository.findById(event.getSportId());
 
+
         eventObj.setEventAwayTeam(awayT.get());
         eventObj.setEventHomeTeam(homeT.get());
         eventObj.setEventResult(result.get());
         eventObj.setEventSport(sport.get());
         eventObj.setEventStatus(event.getEventStatus());
-
+        eventObj.setEventDateVenue(event.getEventDateVenue());
+        eventObj.setEventTimeVenueUTC(event.getEventTimeVenueUTC());
         return eventRepository.save(eventObj);
     }
 }

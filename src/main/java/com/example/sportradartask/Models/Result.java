@@ -4,10 +4,13 @@ package com.example.sportradartask.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "Result")
 public class Result {
