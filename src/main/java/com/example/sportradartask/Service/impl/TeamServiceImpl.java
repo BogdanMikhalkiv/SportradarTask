@@ -14,7 +14,13 @@ import java.util.List;
 @Primary
 public class TeamServiceImpl  implements TeamService {
 
-    private TeamRepository teamRepository;
+    private final TeamRepository teamRepository;
+
+//    public TeamServiceImpl(TeamRepository teamRepository) {
+//        this.teamRepository = teamRepository;
+//    }
+
+
 
     @Override
     public List<Team> getTeamList() {
