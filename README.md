@@ -114,3 +114,24 @@ If your application is set up correctly, you should see your application’s int
 
 
 You can also open a project using the IDE(IntelliJ IDEA). Then you need to follow the following path to launch the application ergoTask/src/main/java/com/example/ergotask/ErgoTaskApplication.java . In this class, click on the green triangle that is parallel to the 7th or 9th line of code to launch the program. And then you need to go to the browser and write in the search bar: http://localhost:8080 . And that's it. 
+
+## Adding data via Postman
+1. open Postman
+2. press "+" create new request
+3. Choose type method "Post"
+4. paste "http://localhost:8080/api/v2/events/add_event
+5. Authorization - no Auth
+6. Body example :
+   ````
+   {
+    "eventStatus": "new",
+    "eventTimeVenueUTC": "08:30",
+    "eventDateVenue": "2025-12-03",
+    "homeTeamId": 1,
+    "awayTeamId": 2,
+    "resultId": 2,
+    "sportId": 1
+   }
+   ````
+7. Press send
+8. Refresh the main Page http://localhost:8080/v1/events and you will see new record
