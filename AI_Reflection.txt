@@ -1,0 +1,29 @@
+I used ChatGPT as a helper during the development process, mainly for:
+	1.	Clarifying errors related to:
+	•	Hibernate relationships
+	•	JPA lazy loading pitfalls
+	•	N+1 problems
+	2.	Asking for guidance on:
+	•	Best practices for structuring services and controllers
+	3.	Improving documentation:
+	•	Help writing README.md file
+	•	Help writing this AI_Reflection.txt file
+
+What AI did not do
+	•	AI did not write the whole project
+	•	AI did not design the architecture
+	•	AI did not directly generate the final code
+	•	AI did not build or test the application
+
+All coding decisions and implementation details were done manually by me.
+
+How AI was integrated responsibly
+	•	I used AI similar to how a developer uses StackOverflow or online documentation.
+	•	AI provided examples, explanations, and debugging hints.
+	•	All code was rewritten, validated, adapted, and tested manually.
+	•	No externally generated code was copy-pasted without verification.
+
+Conclusion
+
+AI helped by speeding up research and debugging, but all core logic, structure, and implementation were fully created and understood by me.
+AI was used as an educational assistant, not as an automated generator.
